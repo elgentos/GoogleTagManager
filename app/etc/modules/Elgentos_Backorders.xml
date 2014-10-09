@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Elgentos_Backorders>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Parcelshipper_Paazl />
+            </depends>
+        </Elgentos_Backorders>
+    </modules>
+</config>
