@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Elgentos_GoogleTagManager>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Elgentos_GoogleTagManager>
+    </modules>
+</config>
