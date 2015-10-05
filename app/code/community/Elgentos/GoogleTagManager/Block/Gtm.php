@@ -101,7 +101,7 @@ class Elgentos_GoogleTagManager_Block_Gtm extends Mage_Core_Block_Template
             $dataPush .= "ecomm_totalvalue: '".$this->_getTotalCartValue()."'";
         } else {
             $dataPush = "ecomm_prodid: '', \n";
-            $dataPush = "ecomm_pagetype: 'cart', \n";
+            $dataPush .= "ecomm_pagetype: 'cart', \n";
             $dataPush .= "ecomm_totalvalue: ''";  
         }
         
@@ -120,7 +120,7 @@ class Elgentos_GoogleTagManager_Block_Gtm extends Mage_Core_Block_Template
     protected function _getDefaultDataLayer()
     {
         $dataPush = "ecomm_prodid: '', \n";
-        $dataPush = "ecomm_pagetype: 'siteview', \n";
+        $dataPush .= "ecomm_pagetype: 'siteview', \n";
         $dataPush .= "ecomm_totalvalue: ''";  
         return $dataPush;
     }
