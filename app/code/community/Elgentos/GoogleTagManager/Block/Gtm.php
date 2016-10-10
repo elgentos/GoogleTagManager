@@ -51,22 +51,6 @@ class Elgentos_GoogleTagManager_Block_Gtm extends Mage_Core_Block_Template
 
     protected function _getDataLayer()
     {
-        /*
-        if (Mage::registry('product') && $this->getRequest()->getControllerName() == 'product') {
-            $dataPush = $this->_getProductDataLayer();
-        } elseif ($this->getRequest()->getControllerName() == 'category') {
-            $dataPush = $this->_getCategoryDataLayer();
-        } elseif ($this->getRequest()->getControllerName() == 'cart' || in_array("onestepcheckout_index_index", $this->getLayout()->getUpdate()->getHandles())) {
-            $dataPush = $this->_getCartDataLayer();
-        }  elseif (Mage::getSingleton('cms/page')->getIdentifier() == 'home'){
-            $dataPush = $this->_getHomeDataLayer();
-        }  elseif ($this->getRequest()->getControllerName() == 'onepage' && $this->getRequest()->getActionName() == 'success' ){
-            $dataPush = $this->_getSuccessDataLayer();
-        } else {
-            $dataPush = $this->_getDefaultDataLayer();
-        }
-        */
-
         if (
             Mage::registry('product')
             && $this->getRequest()->getControllerName() == 'product'
@@ -80,7 +64,6 @@ class Elgentos_GoogleTagManager_Block_Gtm extends Mage_Core_Block_Template
         ) {
             $this->_getSuccessDataLayer();
         }
-        $this->_getSuccessDataLayer();
 
         /* Fetch product impression layers from events */
         if($this->_helper->isProductImpressionsMeasuringEnabled()) {

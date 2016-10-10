@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Elgentos_GoogleTagManager>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Elgentos_GoogleTagManager>
     </modules>
     <global>
