@@ -6,34 +6,34 @@
             <sort_order>195</sort_order>
         </elgentos>
     </tabs>
-        
-	<sections>
+
+    <sections>
         <googletagmanager translate="label" module="googletagmanager">
-           <label>Google Tag Manager</label>
-           <tab>elgentos</tab>
-           <frontend_type>text</frontend_type>
-           <sort_order>71</sort_order>
-           <show_in_default>1</show_in_default>
-           <show_in_website>1</show_in_website>
-           <show_in_store>1</show_in_store>
-           <groups>
-               <general translate="label">
-                   <label>General</label>
-                   <expanded>1</expanded>
-                   <sort_order>600</sort_order>
-                   <show_in_default>1</show_in_default>
-                   <show_in_website>1</show_in_website>
-                   <show_in_store>1</show_in_store>
-                   <fields>
-                    <active translate="label">
-                        <label>Enable</label>
-                        <frontend_type>select</frontend_type>
-                        <source_model>adminhtml/system_config_source_yesno</source_model>
-                        <sort_order>10</sort_order>
-                        <show_in_default>1</show_in_default>
-                        <show_in_website>1</show_in_website>
-                        <show_in_store>1</show_in_store>
-                    </active>
+            <label>Google Tag Manager</label>
+            <tab>elgentos</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>71</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <expanded>1</expanded>
+                    <sort_order>600</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
                         <containerid translate="label">
                             <label>Container Public ID</label>
                             <frontend_type>text</frontend_type>
@@ -41,30 +41,74 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <depends><active>1</active></depends>
+                            <depends>
+                                <active>1</active>
+                            </depends>
                         </containerid>
-                    
-                   </fields>
-               </general>
-               
-                <about translate="label">
-                    <label>Developer</label>
-                    <frontend_type>text</frontend_type>
-                    <sort_order>900</sort_order>
+                    </fields>
+                </general>
+                <events>
+                    <label>Events</label>
+                    <comment><![CDATA[Choose which events to measure - more info in the <a href="https://developers.google.com/tag-manager/enhanced-ecommerce#enable" target="_new">Enhanced Ecommerce (UA) Developer Guide</a>]]></comment>
+                    <expanded>1</expanded>
+                    <sort_order>600</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <info translate="label">
-                            <frontend_model>googletagmanager/about</frontend_model>
-                            <sort_order>1</sort_order>
+                        <measure_product_impressions translate="label comment">
+                            <label>Measuring Product Impressions</label>
+                            <comment><![CDATA[Measures product impressions and also tracks a standard pageview for the tag configuration - a developer should implement this by using the events available.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </info>
+                        </measure_product_impressions>
+                        <measure_product_detail_impressions translate="label comment">
+                            <label>Measuring Views of Product Details</label>
+                            <comment>Measure a view of product details. This example assumes the detail view occurs on pageload, and also tracks a standard pageview of the details page.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </measure_product_detail_impressions>
+                        <measure_product_clicks translate="label comment">
+                            <label>Measuring Product Clicks</label>
+                            <comment><![CDATA[Call this function when a user clicks on a product link. <br /><strong>NOT IMPLEMENTED YET</strong>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </measure_product_clicks>
+                        <measure_add_removal_from_cart>
+                            <label>Measuring Additions or Removals from a Shopping Cart</label>
+                            <comment><![CDATA[Measure a view of product details. This example assumes the detail view occurs on pageload, and also tracks a standard pageview of the details page.<br /><strong>NOT IMPLEMENTED YET</strong>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </measure_add_removal_from_cart>
+                        <measure_purchases>
+                            <label>Measuring Purchases</label>
+                            <comment>Send transaction data with a pageview if available when the page loads.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </measure_purchases>
                     </fields>
-                </about>
-           </groups>
-       </googletagmanager>
-	</sections>
+                </events>
+            </groups>
+        </googletagmanager>
+    </sections>
 </config>

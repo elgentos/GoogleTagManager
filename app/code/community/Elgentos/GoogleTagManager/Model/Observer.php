@@ -13,4 +13,9 @@ class Elgentos_GoogleTagManager_Model_Observer
         $block = Mage::app()->getFrontController()->getAction()->getLayout()->getBlock('google_tag_manager');
         if ($block) $block->setOrderIds($orderIds);
     }
+
+    public function stashProductImpressions(Varien_Event_Observer $observer)
+    {
+        Mage::helper('googletagmanager')->addProductImpressionsToList($observer->getList(), $observer->getProducts());
+    }
 }
