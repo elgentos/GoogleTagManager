@@ -18,7 +18,9 @@ class Elgentos_GoogleTagManager_Block_Catalog_Product_List_Related extends Mage_
             );
         }
 
-        Mage::register('elgentos_googletagmanager_product_impressions', true);
+        if(! Mage::registry('elgentos_googletagmanager_product_impressions')) {
+            Mage::register('elgentos_googletagmanager_product_impressions', true);
+        }
 
         return $this->_itemCollection;
     }
